@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "oyewole/node_modules/.bin/next dev",
-    "build": "oyewole/node_modules/.bin/next build",
-    "start": "oyewole/node_modules/.bin/next start"
+    "dev": "next dev",
+    "build": "",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
