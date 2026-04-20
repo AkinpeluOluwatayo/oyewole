@@ -95,7 +95,7 @@ export default function Portfolio() {
           <div className="md:hidden text-[9px] uppercase tracking-widest font-bold">Menu // 26</div>
         </nav>
 
-        {/* Hero Section - UPDATED TO GROBOLD */}
+        {/* Hero Section */}
         <section className="min-h-screen flex items-center px-6 md:px-16 pt-20 md:pt-0">
           <div className="max-w-7xl w-full mx-auto">
             <h1 className="hero-reveal text-[18vw] md:text-[10vw] leading-[0.85] font-grobold tracking-tight mb-8 md:mb-12 uppercase">
@@ -108,11 +108,12 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Philosophy & Portrait Section */}
+        {/* Philosophy & Portrait Section - UPDATED RESPONSIVE GRAYSCALE */}
         <section id="about" className="py-24 md:py-48 px-6 md:px-16 bg-foreground text-background">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            {/* Image Container: Full color on mobile, B/W on desktop hover */}
             <div
-                className="aspect-[3/4] relative overflow-hidden group border border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 order-2 md:order-1 bg-zinc-900">
+                className="aspect-[3/4] relative overflow-hidden group border border-white/5 md:grayscale hover:md:grayscale-0 transition-all duration-1000 order-2 md:order-1 bg-zinc-900">
               <Image
                   src="/images/Daniel.PNG"
                   alt="Daniel Oyewole"
@@ -136,7 +137,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Swiper Gallery */}
+        {/* Swiper Gallery - UPDATED RESPONSIVE OPACITY */}
         <section id="features" className="py-24 md:py-40 px-6 md:px-16 bg-[#f0f0f0] dark:bg-zinc-950">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between md:items-end mb-12 md:mb-16 gap-4">
@@ -165,12 +166,16 @@ export default function Portfolio() {
                         rel="noopener noreferrer"
                         className="group relative block h-full w-full overflow-hidden bg-zinc-900"
                     >
+                      {/* Full opacity on mobile, dimmed on desktop hover */}
                       <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40"
+                          className="object-cover opacity-100 md:opacity-60 transition-all duration-700 md:group-hover:scale-110 md:group-hover:opacity-40"
                       />
+                      {/* Gradient overlay for mobile text readability */}
+                      <div className="absolute inset-0 bg-black/30 md:bg-transparent z-0" />
+
                       <div className="relative z-10 h-full w-full flex flex-col justify-between p-8 md:p-10 text-white">
                         <div
                             className="flex justify-between text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-bold opacity-80">
@@ -182,7 +187,7 @@ export default function Portfolio() {
                             {project.title}
                           </h3>
                           <div
-                              className="text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                              className="text-[10px] uppercase tracking-widest font-bold opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
                             View Reel →
                           </div>
                         </div>
