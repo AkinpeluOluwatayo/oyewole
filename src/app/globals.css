@@ -1,4 +1,4 @@
-@import "../../oyewole/node_modules/tailwindcss/dist/lib.d.mts";
+@import "tailwindcss";
 
 :root {
   --background: #faf9f6;
@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   /* Elegant system serif stack */
   --font-serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  /* Registering Grobold so you can use class="font-grobold" */
+  --font-grobold: "Grobold", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +19,14 @@
     --background: #0d0d0d;
     --foreground: #eceae0;
   }
+}
+
+@font-face {
+  font-family: 'Grobold';
+  src: url('/fonts/Grobold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -28,6 +38,10 @@ body {
 
 h1, h2, h3, h4, .font-serif {
   font-family: var(--font-serif);
+}
+
+.font-grobold {
+  font-family: 'Grobold', sans-serif;
 }
 
 /* Lenis CSS */
@@ -50,14 +64,4 @@ html.lenis, html.lenis body {
 /* Custom Swiper pagination color */
 .swiper-pagination-bullet-active {
   background: var(--foreground) !important;
-}
-@font-face {
-  font-family: 'Grobold';
-  src: url('/fonts/Grobold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.font-grobold {
-  font-family: 'Grobold', sans-serif;
 }
